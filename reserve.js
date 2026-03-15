@@ -65,7 +65,7 @@ function getNextWeekSameDay() {
     await page.locator('a').filter({ hasText: 'All Service Locations' }).click();
     await page.locator('#location_chosen').getByText('Badminton').click();
 
-    await page.locator('#timeFrom_chosen a').filter({ hasText: ':00 PM' }).click();
+    await page.locator('#timeFrom_chosen a').filter({ hasText: ':00 AM' }).click();
     await page.locator('#timeFrom_chosen').getByText('10:00 AM').click();
 
     await page.locator('a').filter({ hasText: '12:00 AM' }).click();
