@@ -2,7 +2,7 @@ name: Reserve Slot
 
 on:
   schedule:
-    - cron: '35 17 * * 0,5'   # 6:50 AM America/Chicago on Sunday and Friday while CDT is UTC-5
+    - cron: '21 22 * * 0,5'   # 6:50 AM America/Chicago on Sunday and Friday while CDT is UTC-5
   workflow_dispatch:
 
 jobs:
