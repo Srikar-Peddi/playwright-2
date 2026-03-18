@@ -2,7 +2,7 @@ name: Reserve Slot
 
 on:
   schedule:
-    - cron: '15 11 * * 0,5'
+    - cron: '15 11 * * 0,3,5'
   workflow_dispatch:
 
 jobs:
