@@ -31,8 +31,8 @@ function getNextWeekSameDay() {
   const page = await browser.newPage();
 
   try {
-    const username = process.env.CLUB_USER;
-    const password = process.env.CLUB_PASS;
+    const username = process.env.CLUB_USER_N;
+    const password = process.env.CLUB_PASS_N;
 
     if (!username || !password) {
       throw new Error('Missing CLUB_USER or CLUB_PASS environment variables.');
@@ -76,7 +76,7 @@ function getNextWeekSameDay() {
     const start = Date.now();
 
     await page.getByRole('button', { name: 'Search' }).click();
-    await page.getByRole('link', { name: '11:00am' }).first().click();
+    await page.getByRole('link', { name: '12:00pm' }).first().click();
     await page.getByRole('button', { name: 'Confirm' }).click();
     await page.getByRole('button', { name: 'Ok' }).click();
 
