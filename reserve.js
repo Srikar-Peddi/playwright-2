@@ -35,7 +35,7 @@ function getNextWeekSameDay() {
     const password = process.env.CLUB_PASS_N;
 
     if (!username || !password) {
-      throw new Error('Missing CLUB_USER or CLUB_PASS environment variables.');
+      throw new Error('Missing CLUB_USER_N or CLUB_PASS_N environment variables.');
     }
 
     await page.goto('https://walmart.clubautomation.com/', {
