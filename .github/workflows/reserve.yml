@@ -27,7 +27,7 @@ jobs:
 
       - name: Run reservation script
         env:
-          CLUB_USER: ${{ secrets.CLUB_USER_N }}
-          CLUB_PASS: ${{ secrets.CLUB_PASS_N }}
+          CLUB_USER_N: ${{ secrets.CLUB_USER_N }}
+          CLUB_PASS_N: ${{ secrets.CLUB_PASS_N }}
           TZ: America/Chicago
         run: node reserve.js
