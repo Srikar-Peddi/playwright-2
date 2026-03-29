@@ -39,8 +39,8 @@ function getNextWeekSameDay(offset = 7) {
   const page = await browser.newPage();
 
   try {
-    const username = process.env.CLUB_USER;
-    const password = process.env.CLUB_PASS;
+    const username = process.env.CLUB_USER_N;
+    const password = process.env.CLUB_PASS_N;
 
     if (!username || !password) {
       throw new Error('Missing CLUB_USER or CLUB_PASS environment variables.');
@@ -71,10 +71,10 @@ function getNextWeekSameDay(offset = 7) {
     await page.locator('#location_chosen').getByText('Badminton').click();
 
     await page.locator('#timeFrom_chosen a').filter({ hasText: ':00 AM' }).click();
-    await page.locator('#timeFrom_chosen').getByText('6:00 PM').click();
+    await page.locator('#timeFrom_chosen').getByText('10:00 AM').click();
 
     await page.locator('a').filter({ hasText: '12:00 AM' }).click();
-    await page.locator('#timeTo_chosen').getByText('8:00 PM').click();
+    await page.locator('#timeTo_chosen').getByText('11:00 AM').click();
 
     // Uncomment for real scheduled runs
      await waitUntil7AM();
@@ -82,7 +82,7 @@ function getNextWeekSameDay(offset = 7) {
     const start = Date.now();
 
     await page.getByRole('button', { name: 'Search' }).click();
-    await page.getByRole('link', { name: '7:00pm' }).first().click();
+    await page.getByRole('link', { name: ':00am' }).first().click();
     await page.getByRole('button', { name: 'Confirm' }).click();
     await page.getByRole('button', { name: 'Ok' }).click();
 
